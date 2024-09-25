@@ -1,0 +1,51 @@
+<style>
+    .custom-container {
+      max-width: 1200px; /* Ajusta el tamaño según tus necesidades */
+      margin: auto; /* Centra el contenedor */
+    }
+    .table {
+      width: 100%; /* Aumenta el ancho de la tabla al 100% del contenedor */
+    }
+  </style>
+  
+  <div class="container custom-container">
+    <div class="row">
+      <div class="col-sm-12">
+        <form class="form-inline">
+          <fieldset class="form-group col-sm-11"></fieldset>
+          <fieldset class="form-group col-sm-1">
+            <a class="btn btn-primary" [routerLink]="['/solicitudes/agregar']">Nueva Solicitud</a> <!-- Enlace para agregar nuevas solicitudes -->
+          </fieldset>
+        </form>
+        <br>
+        <table class="table table-striped">
+          <thead>
+            <tr class="row">
+              <th class="col-sm-1">ID</th>
+              <th class="col-sm-2">Nombre Solicitante</th>
+              <th class="col-sm-2">Email Solicitante</th>
+              <th class="col-sm-2">Fecha de Solicitud</th>
+              <th class="col-sm-1">Estado</th>
+              <th class="col-sm-2">Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let solicitud of solicitudes | async" class="row">
+              <td class="col-sm-1"><i>{{ solicitud.id }}</i></td>
+              <td class="col-sm-2"><i>{{ solicitud.nombreSolicitante }}</i></td>
+              <td class="col-sm-2"><i>{{ solicitud.email }}</i></td>
+                            <td class="col-sm-2"><i>{{ solicitud.fechaSolicitud | date: 'shortDate' }}</i></td> <!-- Formato de fecha ajustable -->
+              <td class="col-sm-1"><i>{{ solicitud.estado }}</i></td>
+              <td class="col-sm-2">
+                <div class="btn-group" role="group">
+                  <a class="btn btn-info" [routerLink]="['/solicitudes/editar/', solicitud.id]">Editar</a>
+                  <a class="btn btn-danger" (click)="borrarSolicitud(solicitud.id)">Borrar</a>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  

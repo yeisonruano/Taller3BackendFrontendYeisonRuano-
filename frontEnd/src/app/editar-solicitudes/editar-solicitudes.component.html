@@ -1,0 +1,49 @@
+<div class="row">
+    <div class="col-sm-12">
+      <form (ngSubmit)="onSubmit()" #solicitudForm="ngForm">
+        <fieldset class="form-group">
+          <div class="col-sm-12">
+            <label class="control-label" for="nombreSolicitante">Nombre del Solicitante</label>
+            <input type="text" class="form-control" required [(ngModel)]="solicitud.nombreSolicitante" name="nombreSolicitante">
+          </div>
+        </fieldset>
+  
+        <fieldset class="form-group">
+          <div class="col-sm-12">
+            <label class="control-label" for="emailSolicitante">Email del Solicitante</label>
+            <input type="email" class="form-control" required [(ngModel)]="solicitud.email" name="emailSolicitante">
+          </div>
+        </fieldset>
+  
+
+  
+        <fieldset class="form-group">
+          <div class="col-sm-12">
+            <label class="control-label" for="mascotaId">ID de la Mascota</label>
+            <input type="number" class="form-control" required [(ngModel)]="solicitud.idMascota" name="mascotaId">
+          </div>
+        </fieldset>
+  
+        <fieldset class="form-group">
+          <div class="col-sm-12">
+            <label class="control-label" for="fechaSolicitud">Fecha de Solicitud</label>
+            <input type="date" class="form-control" required [(ngModel)]="solicitud.fechaSolicitud" name="fechaSolicitud">
+          </div>
+        </fieldset>
+  
+        <fieldset class="form-group">
+          <div class="col-sm-12">
+            <label class="control-label" for="estado">Estado</label>
+            <input type="text" class="form-control" required [(ngModel)]="solicitud.estado" name="estado">
+          </div>
+        </fieldset>
+  
+        <fieldset class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-primary" [disabled]="!solicitudForm.form.valid">Enviar</button>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+  

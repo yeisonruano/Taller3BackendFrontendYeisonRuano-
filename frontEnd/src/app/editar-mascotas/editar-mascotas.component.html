@@ -1,0 +1,70 @@
+<div class="row">
+  <div class="col-sm-12">
+    <form (ngSubmit)="onSubmit()" #mascotaForm="ngForm">
+      <fieldset class="form-group">
+        <div class="col-sm-12">
+          
+          <label class="control-label" for="nombre">Nombre</label>
+          <input type="text" class="form-control" required [(ngModel)]="mascota.nombre" name="nombre">
+        </div>
+      </fieldset>
+
+      <fieldset class="form-group">
+        <div class="col-sm-12">
+          <label class="control-label" for="edad">Edad</label>
+          <input type="number" class="form-control" required [(ngModel)]="mascota.edad" name="edad">
+        </div>
+      </fieldset>
+
+      <fieldset class="form-group">
+        <div class="col-sm-12">
+          <label class="control-label" for="especie">Especie</label>
+          <input type="text" class="form-control" required [(ngModel)]="mascota.especie" name="especie">
+        </div>
+      </fieldset>
+
+      <fieldset class="form-group">
+        <div class="col-sm-12">
+          <label class="control-label" for="raza">Raza</label>
+          <input type="text" class="form-control" required [(ngModel)]="mascota.raza" name="raza">
+        </div>
+      </fieldset>
+
+      <fieldset class="form-group">
+        <div class="col-sm-12">
+          <label class="control-label" for="descripcion">Descripción</label>
+          <textarea class="form-control" required [(ngModel)]="mascota.descripcion" name="descripcion"></textarea>
+        </div>
+      </fieldset>
+
+      <fieldset class="form-group">
+        <div class="col-sm-12">
+          <label class="control-label" for="estado">Estado</label>
+          <input type="text" class="form-control" required [(ngModel)]="mascota.estado" name="estado">
+        </div>
+      </fieldset>
+
+      <fieldset class="form-group">
+        <div class="col-sm-12">
+          <label class="control-label" for="fecha_registro">Fecha de Registro</label>
+          <input type="date" class="form-control" required [(ngModel)]="mascota.fecha_registro" name="fecha_registro">
+        </div>
+      </fieldset>
+
+      
+      <fieldset class="form-group">
+        <div class="col-sm-12">
+          <label class="control-label" for="imagen">Imagen</label>
+          <textarea class="form-control" required [(ngModel)]="mascota.imagen" name="imagen"></textarea>
+        </div>
+      </fieldset>
+      
+
+      <fieldset class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit" class="btn btn-primary" [disabled]="!mascotaForm.form.valid">Enviar</button>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div>

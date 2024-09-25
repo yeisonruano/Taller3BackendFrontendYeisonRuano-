@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="home-container p-5 mb-4 text-center rounded-3" style="background-color: #375fe3; margin-top: 15px;"> <!-- Color de fondo y margen superior -->
+
+        <!-- Contenedor flex para alinear el logo y el título -->
+        <div class="d-flex justify-content-center align-items-center" style="margin-top: 10;">
+            <h3 style="font-weight: normal; font-size: 50px; margin-left: 100px; color: white;">Bienvenido a la Página de Inicio</h3>
+            
+            <!-- Cambia el color del texto a blanco -->
+            <div class="logo-container mb-1" style="margin-left: 2cm; margin-bottom: 1px; margin-top: 1px; position: relative; top: -1m;"> 
+                <img src="https://static.vecteezy.com/system/resources/previews/015/693/563/non_2x/dog-and-cat-logo-for-pet-shop-vector.jpg" alt="Logo" class="img-fluid" style="max-width: 80px;">
+            </div>
+        </div>
+        <h1 class="display-4" style="color: white; margin-top: 20px;">Tu mascota, nuestra familia</h1> <!-- Cambia el color del texto a blanco y agrega margen superior -->
+
+        <!-- Botones alineados y bajados 2 centímetros -->
+        <div class="d-flex justify-content-center" style="margin-top: 2cm;">
+            <button class="btn btn-light btn-lg mb-3" style="margin-right: 50px; background-color: #28a745; color: white;" routerLink="/mascotas">Mascotas</button> <!-- Botón Ver Mascotas con margen derecho de 50px y color de fondo verde -->
+            <button class="btn btn-light btn-lg mb-3" style="margin-left: 50px; background-color: #db5c5c; color: white;" routerLink="/solicitudes">Solicitudes</button> <!-- Botón Solicitudes con margen izquierdo de 50px y color de fondo azul -->
+        </div>
+
+    </div>
+
+    <hr class="my-4">
+
+    <div class="bg-light p-4 rounded">
+        <h2 class="text-center mb-4">Estas son las mascotas disponibles:</h2>
+
+        <div class="row">
+            <div class="col-md-4 mb-4" *ngFor="let mascota of mascotas">
+                <div class="card shadow-sm">
+                    <!-- Mostrar la imagen usando el campo 'imagen' -->
+                    <img [src]="mascota.imagen" class="card-img-top img-mascota" alt="{{ mascota.nombre }}">
+
+                    <div class="card-body">
+                        <h5 class="card-title">{{ mascota.nombre }}</h5>
+                        <p class="card-text">Edad: {{ mascota.edad }} años</p>
+                        <p class="card-text">Raza: {{ mascota.raza }}</p>
+                        <p class="card-text">Descripción: {{ mascota.descripcion }}</p>
+                        <p class="card-text">Especie: {{ mascota.especie }}</p>
+                        <p class="card-text">Estado: {{ mascota.estado }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
